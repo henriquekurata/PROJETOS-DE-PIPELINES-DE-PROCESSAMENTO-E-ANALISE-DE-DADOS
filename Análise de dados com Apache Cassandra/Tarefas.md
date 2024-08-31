@@ -55,7 +55,7 @@ Fazer o download do arquivo Anaconda Pyhton > No terminal digitar: bash <Nome do
 pip install cassandra-driver
 
 
-### Dados de amostra uilizados 
+### Dados de amostra utilizados 
 
 #datasets (São 30 arquivos)
 
