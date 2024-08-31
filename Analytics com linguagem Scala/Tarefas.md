@@ -429,8 +429,13 @@ df2.show()
 ### Valores gerados pelo scripit do projeto 3
 
 #clientes.txt
+
 1000, Bob Silva, Fortaleza, CE, 78727900
+
 2000, Ted Moreira, Pernambuco, RE, 75201900
+
 3000, Mary Jones, Natal, RN, 77028900
+
 4000, Ana Pereira, Fortaleza, CE, 78227900
+
 5000, James Gordon, Fortaleza, CE, 78727900
