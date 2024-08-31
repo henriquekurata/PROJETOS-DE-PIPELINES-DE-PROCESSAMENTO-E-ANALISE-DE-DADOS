@@ -52,7 +52,7 @@ Fazer o download do arquivo Anaconda Pyhton > No terminal digitar: bash <Nome do
 
 ### Instalar o driver Cassandra
 
-pip install cassandra-driver
+pip install cassandra-driver 
 
 
 ### Dados de amostra utilizados 
