@@ -47,7 +47,7 @@ wget https://downloads.mongodb.com/compass/mongodb-compass-1.43.5.x86_64.rpm
 
 sudo yum install mongodb-compass-1.43.5.x86_64.rpm
 
-## Inicializando o monogodbcompass
+### Inicializando o monogodbcompass
 
 mongodb-compass --no-sandbox
 
