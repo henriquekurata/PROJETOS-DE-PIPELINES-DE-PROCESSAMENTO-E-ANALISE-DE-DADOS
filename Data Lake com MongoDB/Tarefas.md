@@ -1,4 +1,4 @@
-# ***Construção ambiente com MongoDB para análise de dados com Python***
+# ***Construção de ambiente com MongoDB para análise de dados com Python***
 
 
 ## Ferramentas:
