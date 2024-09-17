@@ -1,15 +1,19 @@
-# ***Processamento de dados com linguagem Scala no Apache Spark*** 
+# 🚀 ***Processamento de dados com linguagem Scala no Apache Spark*** 
 
-## Ferramentas: 
+## 📖 **Descrição do Projeto:**
 
+## Principais Funcionalidades:
+
+
+## 🛠️ Ferramentas Utilizadas:
 Java JDK, interpretador da linguagem Scala e Spark.
 
-## Passos:
 
+## 📋 **Descrição do Processo**
 Já listados junto aos comandos.
 
 
-## Comandos:
+## 💻 **Comandos:** 
 
 ### Instalar Java 8 e Scala
 
@@ -439,3 +443,14 @@ df2.show()
 4000, Ana Pereira, Fortaleza, CE, 78227900
 
 5000, James Gordon, Fortaleza, CE, 78727900
+
+
+
+
+---
+## Contato
+
+Se tiver dúvidas ou sugestões sobre o projeto, entre em contato comigo:
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/henrique-k-32967a2b5/)
+- 🐱 [GitHub](https://github.com/henriquekurata?tab=overview&from=2024-09-01&to=2024-09-01)
