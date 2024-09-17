@@ -1,21 +1,48 @@
-# ***Apache Cassandra para processamento de análise de dados***
+# 🚀 ***Apache Cassandra para processamento de análise de dados***
   
-  
- ## Ferramentas:
-Apache Cassandra
 
-## Passos: 
-
-Já listados junto aos comandos
+## 📖 **Descrição do Projeto:**
+O projeto utiliza Apache Cassandra para processar e analisar dados de usuários e sessões de música. O pipeline extrai, transforma e carrega dados em um cluster Cassandra, permitindo a execução de consultas analíticas.
 
 
-## Comandos:
+## Principais Funcionalidades:
+- Extração e transformação de dados de múltiplos arquivos CSV.
+- Criação de tabelas no Cassandra e carga de dados para análises específicas.
+- Execução de três pipelines de Analytics para responder perguntas de negócios.
+- Geração de relatórios em CSV com os resultados das consultas.
 
-## #Instalar Apache Cassandra para RHEL 7
 
-#Criar uma VM com ambiente linux 
+## 🛠️ Ferramentas Utilizadas:
+- **Apache Cassandra**: Banco de dados NoSQL para armazenamento e análise dos dados.
+- **Python**: Para manipulação dos dados e execução dos pipelines.
+- **Pandas**: Para análise e manipulação dos dados no formato DataFrame.
+- **CQL**: Linguagem de consulta Cassandra para manipulação de dados e keyspaces.
 
-#Editar e criar o repositório: 
+
+
+## 📋 **Descrição do Processo:**
+. **Instalação do Apache Cassandra**:
+   - Configuração de uma VM Linux.
+   - Criação de repositório e instalação via `yum`.
+   - Inicialização e configuração do Cassandra para iniciar automaticamente.
+
+2. **Instalação do Python**:
+   - Instalação do Anaconda Python e do driver do Cassandra com `pip`.
+
+3. **ETL**:
+   - **Extração**: Consolidação de 30 arquivos CSV em um único arquivo.
+   - **Transformação**: Filtragem dos dados relevantes para inserção no Cassandra.
+   - **Carga e Analytics**: Inserção dos dados transformados em tabelas do Cassandra e execução de consultas para análises de negócios.
+
+
+
+## 💻 **Comandos:** 
+
+### Instalação do Apache Cassandra para RHEL 7
+
+#### Criar uma VM com ambiente linux 
+
+#### Editar e criar o repositório: 
 
 /etc/yum.repos.d/cassandra.repo
 
@@ -28,32 +55,36 @@ repo_gpgcheck=1
 gpgkey=https://downloads.apache.org/cassandra/KEYS
 ```
 
-#Instale o Cassandra, aceitando os prompts de importação da chave gpg:
+#### Instale o Cassandra, aceitando os prompts de importação da chave gpg:
 
 sudo yum install cassandra
 
-#Inicie o Cassandra (não será iniciado automaticamente):
+#### Inicie o Cassandra (não será iniciado automaticamente):
 
 service cassandra start
 
-#Faça o Cassandra iniciar automaticamente após a 
+#### Faça o Cassandra iniciar automaticamente após a 
 reinicialização:
 
 chkconfig cassandra on
 
-#Conferir o status
+#### Conferir o status
 
 sudo systemctl status cassandra
 
+---
 
 ### Instalar Python 
 
 Fazer o download do arquivo Anaconda Pyhton > No terminal digitar: bash <Nome do arquivo de download> > navegar até cd ~ > source .bashrc (para atualizar as informações do Anaconda)
 
+---
+
 ### Instalar o driver Cassandra
 
 pip install cassandra-driver 
 
+---
 
 ### Dados de amostra utilizados 
 
@@ -65,13 +96,13 @@ Mudhoney,Logged In,Aleena,F,10,Kirby,231.57506,paid,"Waterloo-Cedar Falls, IA",P
 
 Carpenters,Logged In,Aleena,F,11,Kirby,238.39302,paid,"Waterloo-Cedar Falls, IA",PUT,NextSong,1.54102E+12,637,Yesterday Once More,200,1.54233E+12,44
 
-
+---
 
 ### Script ETL para Extração e Transformação (Carga e Analytics está no outro script)
 
 #etl_app.py
 
-```
+```py
 # Imports
 import os
 import glob
@@ -114,10 +145,11 @@ def etl_processa_arquivos():
     return linhas_dados_all
 ```
 
+---
 
 ### Função para extrair somente os dados relevantes do arquivo gerado pela função anterior
 
-```
+```py
 def etl_processa_dados(records):
 
     print("\nIniciando a Etapa 2 do ETL...")
@@ -163,11 +195,12 @@ if __name__ == '__main__':
 ```
 
 
+---
 
 ### Carga de dados e Analytics
 #pipeline.py
 
-```
+```py
 # Imports
 import csv
 import pandas as pd
@@ -319,26 +352,28 @@ def drop_tables(session):
     session.execute(query)
 
 ``` 
+---
 
 ### Perguntas respondidas com esse pipeline:
 
-#Qual o artista e o comprimento (tempo) da música do sessionId = 436 e itemInSession = 12?
+#### Qual o artista e o comprimento (tempo) da música do sessionId = 436 e itemInSession = 12?
 
-#Quais músicas o usuário do userid = 54 e sessionid = 616 ouviu? Retorne o nome do artista, o nome da música e nome e sobrenome do usuário.
+#### Quais músicas o usuário do userid = 54 e sessionid = 616 ouviu? Retorne o nome do artista, o nome da música e nome e sobrenome do usuário.
 
-#Quais usuários ouviram a música 'The Rhythm Of The Night'?
+#### Quais usuários ouviram a música 'The Rhythm Of The Night'?
 
 #Executando o pipeline:
 1. Crie a pasta Projeto1 e coloque lá dentro todos os arquivos do projeto.
 
 2. No terminal, acesse a pasta e execute o pipeline: sudo python etl_app.py
 
+---
 
 ### Trabalhando com CQL
 
-#Instruções CQL
+#### Instruções CQL
 
-```
+```sql
 DESCRIBE keyspaces;
 
 SELECT * FROM system_schema.keyspaces;
@@ -356,7 +391,7 @@ SELECT sessionid, COUNT(*) FROM projeto1.tb_user_session WHERE userid IN ('49', 
 SELECT sessionid, COUNT(*) FROM projeto1.tb_user_session WHERE userid = '49' GROUP BY sessionid ALLOW FILTERING;
 ```
 
-#Sair do CQLSH e digitar os comandos abaixo para verificar a saíde do cluster
+#### Sair do CQLSH e digitar os comandos abaixo para verificar a saíde do cluster
 
 nodetool tablestats
 
@@ -365,3 +400,12 @@ nodetool describecluster
 
 
 OBS: Realizado na vm datanode
+
+
+---
+## 📞 **Contato**
+
+Se tiver dúvidas ou sugestões sobre o projeto, entre em contato comigo:
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/henrique-k-32967a2b5/)
+- 🐱 [GitHub](https://github.com/henriquekurata?tab=overview&from=2024-09-01&to=2024-09-01)
