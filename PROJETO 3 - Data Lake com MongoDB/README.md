@@ -223,6 +223,8 @@ Tout Miséricordieux, le Très Miséricordieux"}
 
 ---
 
+### Executando o Script
+
 Criar a pasta na máquina virtual "Projeto 2" e inserir o pipeline e os dados.
 
 Executar: Python pipeline.py > Verificar o resultado com o mongodbcompass.
