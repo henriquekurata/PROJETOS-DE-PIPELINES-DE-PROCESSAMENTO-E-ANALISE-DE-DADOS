@@ -55,7 +55,6 @@ Add "Path" com o caminho do Hadoop (C:\Hadoop\bin - esse diretório ficara vazio
 ---
 
 ### 3. Pipeline de Machine Learning com Scala e Spark
-#### Treinamento Supervisionado
 
 1. Navegue até a pasta com os arquivos do projeto.
 2. Inicie o Spark com `spark-shell` e rode o pipeline usando o comando: `:load <nome_do_arquivo>`.
@@ -68,7 +67,7 @@ Add "Path" com o caminho do Hadoop (C:\Hadoop\bin - esse diretório ficara vazio
 - Avaliação do modelo com Silhouette Score.
 - Exibição dos resultados e gravação em disco.
 
-```
+```scala
 import org.apache.spark.sql.SparkSession
 
 // Definindo o log de erro
