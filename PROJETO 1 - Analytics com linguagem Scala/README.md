@@ -1,43 +1,72 @@
 # 🚀 ***Processamento de dados com linguagem Scala no Apache Spark*** 
 
 ## 📖 **Descrição do Projeto:**
+Este projeto utiliza a linguagem Scala integrada ao Apache Spark para criar pipelines de aprendizado de máquina e processamento de linguagem natural. São explorados dois casos principais: segmentação de clientes utilizando algoritmos de clustering e remoção de stopwords para análise textual.
+
 
 ## Principais Funcionalidades:
+- Criação de pipelines de Machine Learning em Scala e Spark.
+- Implementação de clustering com K-Means para segmentação de clientes.
+- Processamento de linguagem natural com remoção de stopwords e tokenização.
+- Consolidação de dados de diferentes fontes em um único DataFrame.
+- Definição e aplicação de schemas customizados para estruturação de dados.
 
 
 ## 🛠️ Ferramentas Utilizadas:
-Java JDK, interpretador da linguagem Scala e Spark.
+- **Java JDK 8**
+- **Scala**
+- **Apache Spark**
 
 
-## 📋 **Descrição do Processo**
-Já listados junto aos comandos.
+## 📋 **Descrição do Processo:**
+- Instalação de Java JDK 8, Scala e Apache Spark, e configuração das variáveis de ambiente.
+- Criação de pipelines de aprendizado de máquina com Scala e Spark.
+  - Implementação de modelos supervisionados e não supervisionados (como K-Means).
+  - Avaliação dos modelos e exportação dos resultados.
+- Processamento de linguagem natural (NLP):
+  - Consolidação de múltiplos DataFrames em um único.
+  - Aplicação de tokenização e remoção de stopwords.
+- Criação de funções customizadas para análise textual.
+- Definição e aplicação de schemas customizados para estruturar os dados.
+  - Adição de colunas para análise e visualização dos resultados.
+
 
 
 ## 💻 **Comandos:** 
 
-### Instalar Java 8 e Scala
+### 1. Instalar Java 8 e Scala
 
-Fazer o Download do Java 8 pela documentação Java 
+1. Baixe o Java 8 e Scala das documentações oficiais. 
+   
+   - Fazer o Download do interpretador da linguagem Scala.
 
-Fazer o Download do interpretador da linguagem Scala
+2. No Windows, adicione os arquivos nos caminhos do sistema:
+   - Configurar variáveis de ambiente para Scala e Java (Para Instalar em máquina Windows: colocar o arquivo Scala e Java no drive C > Acessar variáveis de ambiente > Variáveis de usuário > New > Add "Scala" como o caminho do arquivo > Add "Path" com o caminho do JDK/bin).
+   - Assegurar que os binários do Java estejam acima dos binários do Scala nas configurações de ambiente.
 
-Para Instalar em máquina Windows: colocar o arquivo Scala e Java no drive C > Acessar variáveis de ambiente > Variáveis de usuário > New > Add "Scala" como o caminho do arquivo > Add "Path" com o caminho do JDK/bin
+---
 
-Obs: Os binários do Java devem estar acima dos binários Scala nas configurações de ambiente
+### 2. Instalar Apache Spark
 
-## Instalar Apache Spark
+1. Baixe o Apache Spark da documentação oficial.
+2. No Windows, adicione o caminho do Spark e do Hadoop nas variáveis de ambiente (Para Instalar em máquina Windows: colocar o arquivo Spark no drive C > Acessar variáveis de ambiente > Variáveis de ambiente >  Add "Path" com o caminho do Spark (C:\Spark\spark-3.1.2-bin-hadoop2.7\bin) > 
+Add "Path" com o caminho do Hadoop (C:\Hadoop\bin - esse diretório ficara vazio mesmo)). 
 
-Fazer o Download do Apache Spark direto da documentação
-Para Instalar em máquina Windows: colocar o arquivo Spark no drive C > Acessar variáveis de ambiente > Variáveis de ambiente >  Add "Path" com o caminho do Spark (C:\Spark\spark-3.1.2-bin-hadoop2.7\bin) > 
-Add "Path" com o caminho do Hadoop (C:\Hadoop\bin - esse diretório ficara vazio mesmo) 
+---
 
-### Projeto1 - Pipeline de ML com Scala e Apache Spark - Treinamento supervisionado
+### 3. Pipeline de Machine Learning com Scala e Spark
+#### Treinamento Supervisionado
 
-Navegar até a pasta onde estão os arquivos > iniciar o cluster com "spark-shell" > Para rodar o pipeline basta digitar :load <nome do arquivo>
+1. Navegue até a pasta com os arquivos do projeto.
+2. Inicie o Spark com `spark-shell` e rode o pipeline usando o comando: `:load <nome_do_arquivo>`.
 
 
-#PipelineSeg.scala - Treinamento não supervisionado - 
-Pipeline de Machine Learning Para Segmentação de Clientes
+#### Treinamento Não Supervisionado (Segmentação de Clientes)
+#PipelineSeg.scala
+
+- Importação de bibliotecas e criação de um modelo K-Means para segmentação.
+- Avaliação do modelo com Silhouette Score.
+- Exibição dos resultados e gravação em disco.
 
 ```
 import org.apache.spark.sql.SparkSession
@@ -108,7 +137,7 @@ writer.close()
 
 ### Dados de amostra utilizados 
 
-#dados
+#### dados
 
 Channel,Region,Fresh,Milk,Grocery,Frozen,Detergents_Paper,
 Delicatessen
@@ -121,14 +150,18 @@ Delicatessen
 
 1,3,13265,1196,4221,6404,507,1788
 
-
+---
 
 
 ### Projeto 2 - Consolidate e remoção de  Stopwords
 
 #Pipeline ETL Para Processamento de Linguagem Natural com Linguagem Scala e Apache Spark
 
-```
+1. Carregue os arquivos CSV e consolide os dados em um único DataFrame.
+2. Aplique transformações como tokenização e remoção de stopwords para pré-processamento dos textos.
+
+
+```scala
 // Imports
 import org.apache.spark.ml.Pipeline
 import org.apache.spark.sql.{DataFrame, SparkSession}
@@ -378,12 +411,16 @@ id,"product_uid","product_title","search_term","relevance"
 
 
 
-
+---
 
 
 ### Projeto 3 -  Estruturação de dados - Criando um schema para os dados
 
-```
+1. Defina e aplique um schema customizado para os dados, convertendo-os em DataFrame.
+2. Adicione colunas e visualize os resultados.
+
+
+```scala
 // Imports
 import spark.implicits._
 import org.apache.spark.sql.types.{StructType, StructField, StringType, IntegerType}
@@ -448,7 +485,7 @@ df2.show()
 
 
 ---
-## Contato
+## 📞 **Contato**
 
 Se tiver dúvidas ou sugestões sobre o projeto, entre em contato comigo:
 
