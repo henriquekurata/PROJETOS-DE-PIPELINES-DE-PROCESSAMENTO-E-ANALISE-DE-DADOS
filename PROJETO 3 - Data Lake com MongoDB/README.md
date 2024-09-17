@@ -1,21 +1,47 @@
-# ***Construção de ambiente com MongoDB para análise de dados com Python***
+# 🚀 ***Construção de ambiente com MongoDB para análise de dados com Python***
+
+## 📖 **Descrição do Projeto:**
+Este projeto envolve a criação de um ambiente MongoDB para análise de dados com Python, incluindo a instalação do MongoDB, conexão com Python utilizando o pacote `pymongo`, e a construção de um pipeline ETL para ingestão de dados JSON e organização em coleções MongoDB.
 
 
-## Ferramentas:
-MongoDB
+## Principais Funcionalidades:
+- Configuração de ambiente MongoDB.
+- Conexão Python-MongoDB usando `pymongo`.
+- Pipeline ETL para ingestão de dados JSON.
+- Armazenamento de dados em coleções MongoDB.
+- Visualização dos dados via MongoDB Compass.
+
+## 🛠️ Ferramentas Utilizadas:
+- **MongoDB:** Banco de dados NoSQL.
+- **Python:** Linguagem de programação para construção do pipeline ETL.
+- **MongoDB Compass:** Interface gráfica para visualização de dados.
+- **pymongo:** Driver Python para MongoDB.
 
 
-## Passos:
+## 📋 **Descrição do Processo:**
+1. **Instalação do MongoDB:**
+   - Download da versão Community Edition e configuração das variáveis de ambiente.
+   - Criação do banco de dados para administração e inicialização do MongoDB.
+   - Instalação e inicialização do MongoDB Compass para gerenciamento visual.
 
-Já listados junto aos comandos.
+2. **Conexão do Python ao MongoDB:**
+   - Conexão ao MongoDB utilizando `pymongo`.
+   - Implementação de um pipeline ETL que carrega dados JSON de capítulos e versos de um livro.
+   - Criação de coleções no MongoDB e inserção dos dados.
 
-## Comandos:
+3. **Pipeline ETL:**
+   - Importação de dados JSON e transformação para estrutura MongoDB.
+   - Criação de coleções para cada capítulo e inserção dos respectivos versos.
+
+
+
+## 💻 **Comandos:** 
 
 ### Instalando o MongoDB
 
 Fazer o download no mongodb community edition> tar -xvf <nome download> > sudo mv <nome do arquivo de download descompactado> /opt/mongodb
 
-### Variáveis de ambiente:
+#### Variáveis de ambiente:
 
 cd ~
 
@@ -25,18 +51,20 @@ export MONGO_HOME=/opt/mongodb
 
 export PATH=$PATH:$MONGO_HOME/bin
 
-### Criar o banco de dados para asministração do MongoDB:
+#### Criar o banco de dados para administração do MongoDB:
 
 cd ~
 
 mkdir mongodb
 
-### Inicializando o banco de dados
+#### Inicializando o banco de dados
 
 mongod --dbpath /home/aluno/mongodb
 
 OBS: Caso seja necessário, antes de inicializar o mongodb, pode ser preciso limpar o diretório cd /tmp e liberar o PID em uso anterior pelo mongodb (sudo kill <PID>)
 
+
+---
 
 
 ### Instalando Mongodbcompass
@@ -47,11 +75,11 @@ wget https://downloads.mongodb.com/compass/mongodb-compass-1.43.5.x86_64.rpm
 
 sudo yum install mongodb-compass-1.43.5.x86_64.rpm
 
-### Inicializando o monogodbcompass
+#### Inicializando o monogodbcompass
 
 mongodb-compass --no-sandbox
 
-### Conexão do Python ao banco de dados Mongodb
+#### Conexão do Python ao banco de dados Mongodb
 
 Para conectar um script Python em qualquer banco de dados precisamos de um driver, um pequeno software que possui as bibliotecas de conexão ao banco de dados. 
 
@@ -59,10 +87,12 @@ A conexão entre Python e MongoDB pode ser feita através do pacote pymongo, que
 
 pip install pymongo
 
+---
+
 ### Pipeline ETL para ingestão de dados
 #pipeline.py
 
-```
+```py
 # Imports
 import os
 import json
@@ -162,7 +192,7 @@ for versos in conteudo_arquivo_versos:
 print("\nPipeline ETL Concluído com Sucesso.\n")
 ```
 
-### Amostra de dados utilizado
+#### Amostra de dados utilizado
 
 #dados
 
@@ -198,3 +228,12 @@ Criar a pasta na máquina virtual "Prjeto 2" e inserir o pipeline e os dados
 Executar: Python pipeline.py > Verificar o resultado com o mongodbcompass
 
 Obs: Alternativas para análise de dados com o Mongodb: Mongodb Charts (Apenas em nuvem) / Power BI / Bibliotecas Python para criação de gráficos
+
+
+---
+## 📞 **Contato**
+
+Se tiver dúvidas ou sugestões sobre o projeto, entre em contato comigo:
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/henrique-k-32967a2b5/)
+- 🐱 [GitHub](https://github.com/henriquekurata?tab=overview&from=2024-09-01&to=2024-09-01)
