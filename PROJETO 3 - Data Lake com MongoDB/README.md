@@ -221,11 +221,11 @@ print("\nPipeline ETL Concluído com Sucesso.\n")
 {"id":3,"text":"ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ","translation":"Le
 Tout Miséricordieux, le Très Miséricordieux"}
 
+---
 
+Criar a pasta na máquina virtual "Projeto 2" e inserir o pipeline e os dados.
 
-Criar a pasta na máquina virtual "Prjeto 2" e inserir o pipeline e os dados 
-
-Executar: Python pipeline.py > Verificar o resultado com o mongodbcompass
+Executar: Python pipeline.py > Verificar o resultado com o mongodbcompass.
 
 Obs: Alternativas para análise de dados com o Mongodb: Mongodb Charts (Apenas em nuvem) / Power BI / Bibliotecas Python para criação de gráficos
 
