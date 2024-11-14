@@ -76,7 +76,7 @@ sudo systemctl status cassandra
 
 ### Instalar Python 
 
-Fazer o download do arquivo Anaconda Pyhton > No terminal digitar: bash <Nome do arquivo de download> > navegar até cd ~ > source .bashrc (para atualizar as informações do Anaconda)
+Fazer o download do arquivo Anaconda Pyhton > No terminal digitar: bash + Nome do arquivo de download > navegar até cd ~ > source .bashrc (para atualizar as informações do Anaconda)
 
 ---
 
